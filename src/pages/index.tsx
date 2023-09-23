@@ -15,7 +15,6 @@ const Home: React.FC = () => {
         
 
         {session && <Dashboard/>}
-        {!session && <Login/>}
         
       </main>
     </>

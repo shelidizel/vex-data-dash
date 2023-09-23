@@ -17,6 +17,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import NextLink from 'next/link'
+import {signOut}  from 'next-auth/react'
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 const drawerWidth = 240;
 
@@ -49,6 +51,8 @@ const openedMixin = (theme: Theme): CSSObject => ({
 
 const SideMenu = () => {
 
+  
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const mobilecheck = useMediaQuery("(min-width : 600px)")
@@ -67,6 +71,11 @@ const SideMenu = () => {
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
+
+  const handleListItemButtonClick = (text : string) => {
+    text === "Sign Out"? signOut() : null
+    setOpen(false)
+  }
 
     return (
         <Drawer 
@@ -113,7 +122,7 @@ const SideMenu = () => {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                onClick={() => {setOpen(false)}}
+                onClick={() => {handleListItemButtonClick(text)}}
               >
                 <ListItemIcon
                   sx={{

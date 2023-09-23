@@ -4,13 +4,13 @@ const lightTheme : ThemeOptions = {
     palette : {
         mode : 'light',
         primary : {
-            main : '#ffff00'
+            main : '#dc4d01'
         },
         secondary : {
             main : '#ff8400'
         },
         background : {
-            default : '#C8C8C8'
+            default : '#dddddd'
         }
     }
 }

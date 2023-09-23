@@ -6,17 +6,17 @@ const Login = () => {
 
     if(session) {
         return (
-            <>
-        Signed in as {session.user?.email as string} <br/>
-        <Button variant={'contained'} color={'error'} onClick={() => {signOut()}}>Sign Out</Button>
-        </>
+        <Button 
+        variant={'contained'} 
+        color={'error'} 
+        onClick={() => {signOut()}}>Sign Out</Button>
         )
     }
     return (
-        <>
-        Please Sign in <br/>
-        <Button variant={'contained'} color={'success'}  onClick={() => {signIn()}}>Sign In</Button>
-        </>
+        <Button 
+        variant={'contained'} 
+        color={'success'}  
+        onClick={() => {signIn()}}>Sign In</Button>
     )
 
 
